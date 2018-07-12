@@ -1,0 +1,1202 @@
+<html style="" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Madrasi Strokz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Disrupting mechanial engineering">
+	<meta name="keywords" content="Madrasi, Chennai, Mechanical, IC engine, Engineering, training, go kart, lab">
+	<meta name="author" content="FreeHTML5.co">
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<meta property="og:description" content="">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:image" content="">
+	<meta name="twitter:url" content="">
+	<meta name="twitter:card" content="">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+        
+	<style>
+
+.engine_cog__hole--right, .engine_cog__hole--top, .engine_cog__hole--left, .engine_cog__hole--bottom {
+  background: white;
+  width: 10px;
+  position: absolute;
+  height: 10px;
+  border-radius: 50px;
+}
+
+.engine_spoke--right_one, .engine_spoke--right_two, .engine_spoke--left_one, .engine_spoke--left_two {
+  width: 13px;
+  height: 100px;
+  border-radius: 20px;
+  background: #c2c2c2;
+  position: absolute;
+}
+
+.engine_piston--right .ring_one, .engine_piston--right .ring_two, .engine_piston--right .ring_three, .engine_piston--left .ring_one, .engine_piston--left .ring_two, .engine_piston--left .ring_three {
+  width: 12px;
+  height: 100px;
+  border-radius: 20px;
+  transform: rotateZ(90deg);
+  background: #C4595E;
+  position: absolute;
+}
+
+.engine_piston--right, .engine_piston--left {
+  width: 70px;
+  height: 20px;
+  z-index: -10;
+  border-bottom: 150px solid #D66D72;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-radius: 10px;
+  position: absolute;
+}
+
+body {
+  height: 100vh;
+}
+
+.engine {
+  width: 300px;
+  top: 100px;
+  margin: auto;
+  bottom: 0;
+  position: relative;
+}
+.engine .feed .pie {
+  width: 40px;
+  height: 20px;
+  top: -80px;
+  opacity: 0;
+  -webkit-animation-iteration-count: 10;
+  -webkit-animation: drop 1s forwards, feed 1s forwards, cooked 1s forwards, fin 1s;
+  -webkit-animation-delay: 0s, 1s, 2s, 3s;
+  left: -140px;
+  background: red;
+  position: absolute;
+}
+.engine .feed .pie_two {
+  width: 40px;
+  height: 20px;
+  top: -80px;
+  -webkit-animation-iteration-count: 10;
+  -webkit-animation: drop 1s forwards, feed 1s forwards, cooked 1s forwards, fin 1s;
+  -webkit-animation-delay: 1s, 2s, 3s, 4s;
+  left: -140px;
+  background: red;
+  position: absolute;
+}
+.engine .feed .pie_three {
+  opacity: 0;
+  z-index: -1000;
+  position: absolute;
+  top: 0px;
+  -webkit-animation-iteration-count: 10;
+  -webkit-animation: drop 1s forwards, feed 1s forwards, cooked 1s forwards, fin 1s;
+  animation-iteration-count: 3;
+  -webkit-animation-delay: 2s, 3s, 4s, 5s;
+  left: -140px;
+}
+.engine .feed .tin {
+  border-bottom: 20px solid #DA6060;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  width: 50px;
+  height: 20px;
+  transform: rotateZ(180deg);
+  top: -80px;
+  position: absolute;
+}
+.engine .feed_base {
+  width: 600px;
+  height: 20px;
+  border-radius: 30px;
+  background: white;
+  border: 3px solid #DBDBDB;
+  position: absolute;
+  z-index: -10;
+  left: -150px;
+  top: 110px;
+}
+.engine .feed_base__round {
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  background: red;
+  float: left;
+}
+.engine_rev {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 120px;
+  top: -17px;
+  background: #f4f4f4;
+  border-radius: 30px;
+  border: 5px solid #8a8383;
+}
+.engine_rev__bar {
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  left: 5px;
+  top: -3px;
+  background: #c4c4c4;
+  position: relative;
+}
+.engine_rev__needle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 3px 8px 3px;
+  position: relative;
+  left: 16px;
+  z-index: 1;
+  -moz-animation: needle .1s linear infinite;
+  -webkit-animation: needle .1s linear infinite;
+  transform: rotate(14deg);
+  transform-origin: 0px 75px;
+  top: 12px;
+  border-color: transparent transparent #CE6973 transparent;
+}
+.engine .desc {
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 138px;
+  text-shadow: 0px 1px 0px white;
+  font-size: 11px;
+  left: 100px;
+  color: #B0B0B0;
+  font-family: verdana;
+}
+.engine_piston--right {
+  top: -80px;
+  left: 165px;
+  transform: rotateZ(220deg) rotateX(0deg);
+  -webkit-animation: pump_right .1s linear infinite;
+  -moz-animation: pump_right .1s linear infinite;
+}
+.engine_piston--right .ring_one {
+  top: 100px;
+  left: 28px;
+}
+.engine_piston--right .ring_two {
+  top: 75px;
+  left: 28px;
+}
+.engine_piston--right .ring_three {
+  top: 50px;
+  left: 28px;
+}
+.engine_piston--left {
+  top: -88px;
+  left: 40px;
+  transform: rotateZ(-220deg) rotateX(0deg);
+  -webkit-animation: pump .1s linear infinite;
+  -moz-animation: pump .1s linear infinite;
+}
+.engine_piston--left .ring_one {
+  top: 100px;
+  left: 28px;
+}
+.engine_piston--left .ring_two {
+  top: 75px;
+  left: 28px;
+}
+.engine_piston--left .ring_three {
+  top: 50px;
+  left: 28px;
+}
+.engine_spoke--right_one {
+  left: 184px;
+  top: 26px;
+  transform: rotateZ(45deg);
+}
+.engine_spoke--right_two {
+  left: 166px;
+  top: 4px;
+  transform: rotateZ(43deg);
+}
+.engine_spoke--left_one {
+  left: 103px;
+  top: 26px;
+  transform: rotateZ(-45deg);
+}
+.engine_spoke--left_two {
+  left: 120px;
+  transform: rotateZ(-43deg);
+  top: 4px;
+}
+.engine_point_one {
+  height: 20px;
+  width: 20px;
+  bottom: 20px;
+  background: #6C6C6C;
+  left: 39px;
+  border-radius: 10px;
+  position: absolute;
+}
+.engine_point_two {
+  height: 20px;
+  width: 20px;
+  bottom: 20px;
+  background: #6C6C6C;
+  left: 242px;
+  border-radius: 10px;
+  position: absolute;
+}
+.engine_base {
+  width: 270px;
+  margin: auto;
+  position: absolute;
+  bottom: -10px;
+  height: 87px;
+  left: 0;
+  right: 0;
+  background: #e7e7e7;
+  border-radius: 8px;
+}
+.engine_bottom {
+  width: 140px;
+  margin: auto;
+  position: absolute;
+  bottom: -27px;
+  height: 120px;
+  left: 0;
+  right: 0;
+  background: #e7e7e7;
+  border-radius: 18px;
+}
+.engine_bottom_block {
+  width: 252px;
+  margin: auto;
+  position: absolute;
+  bottom: -15px;
+  height: 80px;
+  left: 0;
+  right: 0;
+  background: #D4D4D4;
+  border-radius: 0px;
+  z-index: -1;
+}
+.engine_circle {
+  width: 160px;
+  height: 160px;
+  background: #a7a7a7;
+  border-radius: 100px;
+  position: absolute;
+  z-index: -10;
+  top: -70px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.engine_top_right {
+  width: 60px;
+  margin: auto;
+  position: absolute;
+  bottom: 5px;
+  height: 160px;
+  transform: rotateZ(-65deg);
+  left: 106px;
+  z-index: -21;
+  right: 0;
+  background: #e7e7e7;
+  border-radius: 28px;
+}
+.engine_top {
+  width: 60px;
+  margin: auto;
+  position: absolute;
+  bottom: 5px;
+  height: 160px;
+  transform: rotateZ(65deg);
+  left: -100px;
+  z-index: -21;
+  right: 0;
+  background: #e7e7e7;
+  border-radius: 28px;
+}
+.engine_small_cog {
+  background: #bfbfbf;
+  width: 14px;
+  height: 14px;
+  bottom: 60px;
+  border: 20px solid #bfbfbf;
+  border-radius: 50px;
+  position: relative;
+  -webkit-animation: spin .4s linear infinite;
+  -moz-animation: spin .4s linear infinite;
+}
+.engine_small_cog__hole--right {
+  background: white;
+  width: 10px;
+  position: absolute;
+  height: 10px;
+  top: 2px;
+  right: -9px;
+  border-radius: 50px;
+}
+.engine_small_cog__hole--left {
+  background: white;
+  width: 10px;
+  position: absolute;
+  height: 10px;
+  top: 2px;
+  right: 13px;
+  border-radius: 50px;
+}
+.engine_small_cog__hole--top {
+  background: white;
+  width: 10px;
+  position: absolute;
+  height: 10px;
+  top: -9px;
+  right: 2px;
+  border-radius: 50px;
+}
+.engine_small_cog__hole--bottom {
+  background: white;
+  width: 10px;
+  position: absolute;
+  height: 10px;
+  top: 13px;
+  right: 2px;
+  border-radius: 50px;
+}
+.engine_belt_one {
+  width: 100px;
+  height: 3px;
+  position: absolute;
+  background: #9b9b9b;
+  left: 27px;
+  top: 83px;
+  transform: rotateZ(53deg);
+}
+.engine_belt_two {
+  width: 100px;
+  height: 3px;
+  position: absolute;
+  background: #9b9b9b;
+  left: 172px;
+  top: 85px;
+  transform: rotateZ(-53deg);
+}
+.engine_belt_three {
+  width: 60px;
+  height: 3px;
+  position: absolute;
+  background: #9b9b9b;
+  left: -7px;
+  top: 94px;
+  transform: rotateZ(53deg);
+}
+.engine_belt_four {
+  width: 60px;
+  height: 3px;
+  position: absolute;
+  background: #9b9b9b;
+  left: 247px;
+  top: 94px;
+  transform: rotateZ(-53deg);
+}
+.engine_belt_five {
+  width: 110px;
+  height: 3px;
+  position: absolute;
+  background: #9b9b9b;
+  left: 163px;
+  top: 70px;
+  transform: rotateZ(61deg);
+}
+.engine_belt_six {
+  width: 110px;
+  height: 3px;
+  position: absolute;
+  background: #9b9b9b;
+  left: 28px;
+  top: 70px;
+  transform: rotateZ(-61deg);
+}
+.engine_cog {
+  margin: 0 auto;
+  background: #c56868;
+  box-shadow: 0px 0px 0px 20px #dadada;
+  width: 25px;
+  height: 25px;
+  border: 34px solid #bfbfbf;
+  border-radius: 50px;
+  bottom: -30px;
+  position: relative;
+  -moz-animation: spin-op .6s linear infinite;
+  -webkit-animation: spin-op .6s linear infinite;
+}
+.engine_cog__hole--right {
+  top: 7px;
+  right: -20px;
+}
+.engine_cog__hole--top {
+  top: -20px;
+  right: 7px;
+}
+.engine_cog__hole--left {
+  top: 7px;
+  right: 36px;
+}
+.engine_cog__hole--bottom {
+  top: 36px;
+  right: 8px;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+}
+
+.shine {
+  background: rgba(255, 255, 255, 0.14);
+  width: 500px;
+  height: 250px;
+  top: -200px;
+  right: -137px;
+  position: absolute;
+  z-index: 10;
+  transform: rotateZ(51deg);
+}
+
+.crust_one {
+  width: 17px;
+  height: 17px;
+  top: -89px;
+  -webkit-animation: crust .1s forwards;
+  -webkit-animation-delay: 4s;
+  opacity: 0;
+  left: -5px;
+  z-index: 1;
+  border-radius: 12px;
+  background: #e6ad64;
+  position: absolute;
+}
+
+.crust_two {
+  width: 17px;
+  height: 17px;
+  top: -89px;
+  left: 7px;
+  z-index: 1;
+  border-radius: 12px;
+  background: #e6ad64;
+  -webkit-animation: crust .1s forwards;
+  -webkit-animation-delay: 4s;
+  opacity: 0;
+  position: absolute;
+}
+
+.crust_three {
+  width: 17px;
+  height: 17px;
+  top: -89px;
+  left: 20px;
+  z-index: 1;
+  -webkit-animation: crust .1s forwards;
+  -webkit-animation-delay: 4s;
+  opacity: 0;
+  border-radius: 12px;
+  background: #e6ad64;
+  position: absolute;
+}
+
+.crust_four {
+  width: 17px;
+  height: 17px;
+  -webkit-animation: crust .1s forwards;
+  -webkit-animation-delay: 4s;
+  opacity: 0;
+  top: -89px;
+  left: 33px;
+  z-index: 1;
+  border-radius: 12px;
+  background: #e6ad64;
+  position: absolute;
+}
+
+.crust_five {
+  width: 17px;
+  height: 17px;
+  top: -89px;
+  -webkit-animation: crust .1s forwards;
+  -webkit-animation-delay: 4s;
+  opacity: 0;
+  left: 46px;
+  z-index: 1;
+  border-radius: 12px;
+  background: #e6ad64;
+  position: absolute;
+}
+
+.crust_six {
+  width: 17px;
+  height: 17px;
+  top: -89px;
+  left: 59px;
+  -webkit-animation: crust .1s forwards;
+  -webkit-animation-delay: 4s;
+  opacity: 0;
+  z-index: 1;
+  border-radius: 12px;
+  background: #e6ad64;
+  position: absolute;
+}
+
+/* Animations */
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin-op {
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes pump {
+  50% {
+    top: -85px;
+    left: 41px;
+  }
+}
+@-moz-keyframes pump {
+  50% {
+    top: -85px;
+    left: 41px;
+  }
+}
+@-webkit-keyframes pump_right {
+  50% {
+    top: -82px;
+    left: 167px;
+  }
+}
+@-moz-keyframes pump_right {
+  50% {
+    top: -82px;
+    left: 167px;
+  }
+}
+@-webkit-keyframes needle {
+  50% {
+    transform: rotate(12deg);
+  }
+}
+@-moz-keyframes needle {
+  50% {
+    transform: rotate(12deg);
+  }
+}
+@-webkit-keyframes drop {
+  100% {
+    top: 170px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes feed {
+  100% {
+    left: 130px;
+  }
+}
+@-webkit-keyframes crust {
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fin {
+  from {
+    left: 420px;
+  }
+  to {
+    left: 420px;
+    transform: rotateZ(10deg);
+  }
+  from {
+    top: 90px;
+  }
+  to {
+    top: 140px;
+  }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes cooked {
+  from {
+    left: 130px;
+  }
+  to {
+    left: 420px;
+  }
+}
+
+</style>	
+	</head>
+	<body>
+		
+	<div class="gtco-loader" style="display: none;"></div>
+	
+	<div id="page"><a href="#" class="js-gtco-nav-toggle gtco-nav-toggle "><i></i></a><div id="gtco-offcanvas"><ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="offcanvas-has-dropdown">
+								<a href="services.html">Training</a>
+								<ul class="dropdown" style="display: none;">
+									<li><a href="#">IC Engine</a></li>
+									<li><a href="#">Go Kart</a></li>
+									
+								</ul>
+							</li>
+							
+							<li><a href="portfolio.html">ReThink Community</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul></div><a href="#" class="js-gtco-nav-toggle gtco-nav-toggle "><i></i></a><div id="gtco-offcanvas"><ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="offcanvas-has-dropdown">
+								<a href="services.html">Training</a>
+								<ul class="dropdown" style="display: none;">
+									<li><a href="#">IC Engine</a></li>
+									<li><a href="#">Go Kart</a></li>
+									
+								</ul>
+							</li>
+							
+							<li><a href="portfolio.html">ReThink Community</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul></div><a href="#" class="js-gtco-nav-toggle gtco-nav-toggle "><i></i></a><div id="gtco-offcanvas"><ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="offcanvas-has-dropdown">
+								<a href="services.html">Training</a>
+								<ul class="dropdown">
+									<li><a href="#">IC Engine</a></li>
+									<li><a href="#">Go Kart</a></li>
+									
+								</ul>
+							</li>
+							
+							<li><a href="portfolio.html">ReThink Community</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul></div>
+
+		<nav class="gtco-nav" role="navigation">
+			<div class="gtco-container">
+				
+				<div class="row">
+					<div class="col-sm-2 col-xs-12">
+						<div id="gtco-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="has-dropdown">
+								<a href="services.html">Training</a>
+								<ul class="dropdown" style="display: none;">
+									<li><a href="#">IC Engine</a></li>
+									<li><a href="#">Go Kart</a></li>
+									
+								</ul>
+							</li>
+							
+							<li><a href="portfolio.html">ReThink Community</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</nav>
+
+		<header id="gtco-header" class="gtco-cover" role="banner" style="
+    height: 762px !important;
+    background: linear-gradient(to right, #dcbd26 0%, #ef6828d9 100%);
+">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc" style="
+    height: 100%;
+    vertical-align: top;
+    padding-top: 17%;
+">
+								<div class="row">
+									<div class="col-md-5  header-img animate-box fadeInUp animated-fast" style="
+    text-align:  center;
+">
+<!--?xml version="1.0" encoding="utf-8"?-->
+<svg version="1.1" id="Engine" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 390" enable-background="new 0 0 450 390" xml:space="preserve" style="
+    max-width: 40%;
+">
+<g>
+	<circle fill="#A7A7A7" cx="225" cy="110" r="110"></circle>
+	<g id="Engine">
+		<rect id="Shadow" x="42.2" y="366.6" fill="#D4D4D4" width="365.7" height="7"></rect>
+		<path fill="#E7E7E7" d="M225,130.9L25,193.2v163.7c0,5.7,4.4,11.2,10.2,11.2H95v8c0,7.2,5.3,14,12.5,14h235.1
+			c7.2,0,12.5-6.8,12.5-14v-8h59.8c5.7,0,10.2-5.4,10.2-11.2V193.2L225,130.9z"></path>
+	</g>
+	<g>
+		<g>
+			
+				<rect x="40.7" y="206.5" transform="matrix(0.8071 -0.5904 0.5904 0.8071 -147.6943 75.7953)" fill="#9B9B9B" width="3" height="115"></rect>
+			
+				<rect x="112" y="189" transform="matrix(-0.9604 -0.2785 0.2785 -0.9604 153.1886 519.7626)" fill="#9B9B9B" width="3" height="120"></rect>
+			
+				<rect x="102" y="156.5" transform="matrix(0.6789 -0.7342 0.7342 0.6789 -127.5549 146.3208)" fill="#9B9B9B" width="3" height="125"></rect>
+		</g>
+		<g>
+			
+				<rect x="406.7" y="206.5" transform="matrix(-0.8071 -0.5904 0.5904 -0.8071 581.7623 717.9529)" fill="#9B9B9B" width="3" height="115"></rect>
+			
+				<rect x="335.3" y="189" transform="matrix(0.9604 -0.2785 0.2785 0.9604 -56.0226 103.653)" fill="#9B9B9B" width="3" height="120"></rect>
+			
+				<rect x="345.3" y="156.5" transform="matrix(-0.6789 -0.7342 0.7342 -0.6789 421.4481 622.3044)" fill="#9B9B9B" width="3" height="125"></rect>
+		</g>
+	</g>
+	<g id="BlackDots">
+		<circle fill="#6C6C6C" cx="365" cy="301" r="15"></circle>
+		<circle fill="#6C6C6C" cx="85" cy="301" r="15"></circle>
+	</g>
+</g>
+<g class="PipeLeft" transform="translate(0.0772821 0.0772821)">
+	<path fill="#3F7CAC" d="M200,143.7L139.7,204L11.9,86.9c-5.9-5.9-5.9-15.4,0-21.3l49.7-49.7c5.9-5.9,15.4-5.9,21.3,0L200,143.7z"></path>
+	<path fill="#1B5B7F" d="M93.7,20.5L16.5,97.7c-1.9,1.9-5.1,1.9-7.1,0l-1.8-1.8c-1.9-1.9-1.9-5.1,0-7.1l77.2-77.2
+		c1.9-1.9,5.1-1.9,7.1,0l1.8,1.8C95.7,15.4,95.7,18.6,93.7,20.5z"></path>
+	<path fill="#1B5B7F" d="M111.5,38.2l-77.2,77.2c-1.9,1.9-5.1,1.9-7.1,0l-1.8-1.8c-1.9-1.9-1.9-5.1,0-7.1l77.2-77.2
+		c1.9-1.9,5.1-1.9,7.1,0l1.8,1.8C113.4,33.1,113.4,36.3,111.5,38.2z"></path>
+	<path fill="#1B5B7F" d="M129.2,56L52,133.2c-1.9,1.9-5.1,1.9-7.1,0l-1.8-1.8c-1.9-1.9-1.9-5.1,0-7.1l77.2-77.2
+		c1.9-1.9,5.1-1.9,7.1,0l1.8,1.8C131.1,50.9,131.1,54,129.2,56z"></path>
+	<animateTransform attributeName="transform" begin="0s" dur=".1s" type="translate" values="0,0;3,3;0,0" repeatCount="indefinite"></animateTransform>
+</g>
+<g class="PipeRight" transform="translate(0.0772821 -0.0772821)">
+	<path fill="#3F7CAC" d="M250,143.7l60.3,60.3L438.1,86.9c5.9-5.9,5.9-15.4,0-21.3l-49.7-49.7c-5.9-5.9-15.4-5.9-21.3,0L250,143.7z"></path>
+	<path fill="#1B5B7F" d="M356.3,20.5l77.2,77.2c1.9,1.9,5.1,1.9,7.1,0l1.8-1.8c1.9-1.9,1.9-5.1,0-7.1l-77.2-77.2
+		c-1.9-1.9-5.1-1.9-7.1,0l-1.8,1.8C354.3,15.4,354.3,18.6,356.3,20.5z"></path>
+	<path fill="#1B5B7F" d="M338.5,38.2l77.2,77.2c1.9,1.9,5.1,1.9,7.1,0l1.8-1.8c1.9-1.9,1.9-5.1,0-7.1l-77.2-77.2
+		c-1.9-1.9-5.1-1.9-7.1,0l-1.8,1.8C336.6,33.1,336.6,36.3,338.5,38.2z"></path>
+	<path fill="#1B5B7F" d="M320.8,56l77.2,77.2c1.9,1.9,5.1,1.9,7.1,0l1.8-1.8c1.9-1.9,1.9-5.1,0-7.1l-77.2-77.2
+		c-1.9-1.9-5.1-1.9-7.1,0l-1.8,1.8C318.9,50.9,318.9,54,320.8,56z"></path>
+	<animateTransform attributeName="transform" begin="0s" dur=".1s" type="translate" values="0,0;3,-3;0,0" repeatCount="indefinite"></animateTransform>
+</g>
+<g id="Caps">
+	<g>
+		<path fill="#C2C2C2" d="M282,137.6l-7.1-7.1l17.7-17.7c1.9-1.9,5.1-1.9,7.1,0v0c1.9,1.9,1.9,5.1,0,7.1L282,137.6z"></path>
+		<path fill="#C2C2C2" d="M299.7,155.3l-7.1-7.1l17.7-17.7c1.9-1.9,5.1-1.9,7.1,0v0c1.9,1.9,1.9,5.1,0,7.1L299.7,155.3z"></path>
+	</g>
+	<g>
+		<path fill="#C2C2C2" d="M168,137.6l7.1-7.1l-17.7-17.7c-1.9-1.9-5.1-1.9-7.1,0l0,0c-1.9,1.9-1.9,5.1,0,7.1L168,137.6z"></path>
+		<path fill="#C2C2C2" d="M150.3,155.3l7.1-7.1l-17.7-17.7c-1.9-1.9-5.1-1.9-7.1,0l0,0c-1.9,1.9-1.9,5.1,0,7.1L150.3,155.3z"></path>
+	</g>
+</g>
+<g>
+	<circle fill="#8A8383" cx="225" cy="108.7" r="36.7"></circle>
+	<circle fill="#C2C2C2" stroke="#FFFFFF" stroke-width="5" stroke-miterlimit="10" cx="225" cy="108.7" r="30"></circle>
+</g>
+<g id="SmallCogLeft" transform="rotate(0.927386 35 199)">
+	<circle fill="#BFBFBF" cx="35" cy="199" r="35"></circle>
+	<g>
+		<g>
+			<circle fill="#FFFFFF" cx="46.5" cy="187.5" r="7.5"></circle>
+			<circle fill="#FFFFFF" cx="23.5" cy="187.5" r="7.5"></circle>
+		</g>
+		<g>
+			<circle fill="#FFFFFF" cx="46.5" cy="210.5" r="7.5"></circle>
+			<circle fill="#FFFFFF" cx="23.5" cy="210.5" r="7.5"></circle>
+		</g>
+	</g>
+	<animateTransform attributeName="transform" begin="0s" dur=".5s" type="rotate" from="0 35 199" to="360 35 199" repeatCount="indefinite"></animateTransform>
+</g>
+<g id="SmallCogRight" transform="rotate(0.927386 415 199)">
+	<circle fill="#BFBFBF" cx="415" cy="199" r="35"></circle>
+	<g>
+		<g>
+			<circle fill="#FFFFFF" cx="426.5" cy="187.5" r="7.5"></circle>
+			<circle fill="#FFFFFF" cx="403.5" cy="187.5" r="7.5"></circle>
+		</g>
+		<g>
+			<circle fill="#FFFFFF" cx="426.5" cy="210.5" r="7.5"></circle>
+			<circle fill="#FFFFFF" cx="403.5" cy="210.5" r="7.5"></circle>
+		</g>
+	</g>
+	<animateTransform attributeName="transform" begin="0s" dur=".5s" type="rotate" from="0 415 199" to="360 415 199" repeatCount="indefinite"></animateTransform>
+</g>
+<polyline id="Pointer" fill="#3F7CAC" points="227.7,107.6 234.8,97.7 237.6,109.6 " transform="translate(0.0257607 0.0257607)">
+	<animateTransform attributeName="transform" begin="0s" dur=".1s" type="translate" values="0,0;1,1;0,0" repeatCount="indefinite"></animateTransform>
+</polyline>
+<g id="BigCog" transform="rotate(359.073 225.008 204.007)">
+	<g>
+		<circle fill="#BFBFBF" stroke="#DADADA" stroke-width="20" stroke-miterlimit="10" cx="225" cy="204" r="87.5"></circle>
+		<circle fill="#3F7CAC" cx="225" cy="204" r="15"></circle>
+	</g>
+	<g>
+		<g>
+			<circle fill="#FFFFFF" cx="190" cy="169" r="10"></circle>
+			<circle fill="#FFFFFF" cx="260" cy="169" r="10"></circle>
+		</g>
+		<g>
+			<circle fill="#FFFFFF" cx="190" cy="239" r="10"></circle>
+			<circle fill="#FFFFFF" cx="260" cy="239" r="10"></circle>
+		</g>
+	</g>
+	<animateTransform attributeName="transform" begin="0s" dur=".5s" type="rotate" from="360 225 204" to="0 225 204" repeatCount="indefinite"></animateTransform>
+</g>
+<path id="Cloud3" fill="#666666" d="M413.4,108.3c0-10.3-8.4-18.6-18.8-18.6c-6.1,0-11.5,2.9-14.9,7.3c-1.2-0.3-2.5-0.4-3.8-0.4
+	c-7.3,0-13.4,4.5-15.5,10.6c-6.1,1.9-10.5,7.7-10.5,14.5c0,3.5,1.1,6.7,3.1,9.2c-1.9,1.5-3.1,3.7-3.1,6.2c0,4.4,3.7,8,8.4,8
+	c1.3,0,2.6-0.3,3.7-0.8c3.8,5.3,10.4,8.9,18,8.9c11.8,0,21.4-8.6,21.4-19.3c0-2.7-0.6-5.3-1.7-7.6
+	C407.5,124.1,413.4,116.8,413.4,108.3z" transform="translate(25.0129 -25.0129)">
+	<animateTransform attributeName="transform" begin="0s" dur="3s" type="translate" values="0,0;30,-30" repeatCount="indefinite"></animateTransform>
+     <animate attributeName="opacity" values="0;0.2;1;0.2;0" dur="3s" begin="0s" repeatCount="indefinite"></animate>
+</path>
+<path id="Cloud1" fill="#666666" d="M120.4,151.3c0-10.3-8.4-18.6-18.8-18.6c-6.1,0-11.5,2.9-14.9,7.3c-1.2-0.3-2.5-0.4-3.8-0.4
+	c-7.3,0-13.4,4.5-15.5,10.6c-6.1,1.9-10.5,7.7-10.5,14.5c0,3.5,1.1,6.7,3.1,9.2c-1.9,1.5-3.1,3.7-3.1,6.2c0,4.4,3.7,8,8.4,8
+	c1.3,0,2.6-0.3,3.7-0.8c3.8,5.3,10.4,8.9,18,8.9c11.8,0,21.4-8.6,21.4-19.3c0-2.7-0.6-5.3-1.7-7.6
+	C114.5,167.1,120.4,159.8,120.4,151.3z" transform="translate(-5.01288 -5.01288)">
+	<animateTransform attributeName="transform" begin="0s" dur="2s" type="translate" values="0,0;-20,-20" repeatCount="indefinite"></animateTransform>
+    <animate attributeName="opacity" values="0;0.2;1;0.2;0" dur="2s" begin="0s" repeatCount="indefinite"></animate>
+</path>
+</svg>
+
+
+
+										<!--img src="images/cube.png" alt="Go" style="max-width: 26.2rem;"-->
+
+
+									</div>
+									<div class="col-md-7 copy animate-box fadeInUp animated-fast">
+										<h1>Madrasi Strokz</h1>
+										<p>In learning you will Teach and in Teaching you will Learn.</p>
+										<p><a style="/* color: white; */background: #ff6f00;color: #ffffff;border: 2px solid #333;" href="#about" target="_blank" class="btn btn-white">Know more</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- END #gtco-header -->
+
+		<div class="gtco-client">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-2 col-md-offset-1 text-center client col-sm-6 col-xs-6 col-xs-offset-0 col-sm-offset-0">
+						<img src="images/client_1.png" alt="Free Website Template by FreeHTML5.co" class="img-responsive">
+					</div>
+					<div class="col-md-2 text-center client col-sm-6 col-xs-6 col-xs-offset-0 col-sm-offset-0">
+						<img src="images/client_2.png" alt="Free Website Template by FreeHTML5.co" class="img-responsive">
+					</div>
+				
+				</div>
+			</div>
+		</div>
+		<!-- END .gtco-client -->
+
+		<div class="gtco-services gtco-section">
+			<div class="gtco-container">
+				<div class="row row-pb-sm" style="
+    background:  springgreen;
+">
+					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+						<h2>How we can help you?</h2>
+						<p>You may be aware of the Immense competition among Fresh Graduates to get their first job. Nearly 15 lakh students graduate every year in India and fight for those few jobs. So companies are now very picky in selecting candidates. A survey by McKinney shows that only 25% of students in India are employable. Our Systems are designed in such a way to help you improve your practical, hands-on skills by building projects. </p>
+						<p><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn btn-special popup-vimeo" style="
+    background: #ff6f00;
+    color: #ffffff;
+    border: 2px solid #333;
+">Watch The Video</a></p>
+					</div>
+				</div>
+				<div class="row row-pb-md" style="
+    background:  springgreen;
+">
+					<div class="col-md-4 col-sm-4 service-wrap">
+						<div class="service">
+							<h3><i class="ti-pie-chart"></i> Marketing</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatibus nesciunt, est alias deleniti ipsum fuga ullam maxime repudiandae neque, ad. Maiores quis atque, culpa rem inventore vero amet praesentium, quam sint, magnam reprehenderit doloremque.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 service-wrap">
+						<div class="service animate-change changed animated-fast">
+							<h3><i class="ti-ruler-pencil"></i> Design</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quidem quae, assumenda dolores ad pariatur! Deleniti debitis, voluptatem! Omnis enim magnam perspiciatis, natus. Ipsum distinctio, voluptatibus vero laboriosam sequi! Officia fuga quam eveniet quo similique!</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 service-wrap">
+						<div class="service">
+							<h3><i class="ti-settings"></i> Development</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta aperiam, maiores officia alias accusantium fugiat, doloremque voluptas, voluptatem dolore vel animi praesentium saepe unde consequuntur, eum asperiores odit aliquam error nulla impedit repellendus. Nesciunt, delectus.</p>
+						</div>
+					</div>
+
+					<div class="clearfix visible-md-block visible-sm-block"></div>
+
+				</div>
+			</div>
+		</div>
+		<!-- END .gtco-services -->
+
+		<div class="gtco-section gtco-products">
+			<div class="gtco-container">
+				<div class="row row-pb-sm">
+					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+						<h2>Popular Products</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
+					</div>
+				</div>
+				<div class="row row-pb-md">
+					<div class="col-md-4 col-sm-4">
+						<a href="#" class="gtco-item two-row bg-img animate-box fadeInUp animated-fast" style="background-image: url(images/img_1.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Paper Hot Cup</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_1.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">
+						</a>
+						<a href="#" class="gtco-item two-row bg-img animate-box fadeInUp animated-fast" style="background-image: url(images/img_2.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Notepad Mockup</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_2.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<a href="#" class="gtco-item one-row bg-img animate-box fadeInUp animated-fast" style="background-image: url(images/img_md_1.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Paper Pouch</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_md_1.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<a href="#" class="gtco-item two-row bg-img animate-box fadeInUp animated-fast" style="background-image: url(images/img_3.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Fancy 3D</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_3.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">
+						</a>
+						<a href="#" class="gtco-item two-row bg-img animate-box fadeInUp animated-fast" style="background-image: url(images/img_4.jpg)">
+							<div class="overlay">
+								<i class="ti-arrow-top-right"></i>
+								<div class="copy">
+									<h3>Hard Cover Book</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								</div>
+							</div>
+							<img src="images/img_4.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">
+						</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+					<p><a href="http://freehtml5.co" target="_blank" class="btn btn-special">Visit Gettemplates.co</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END .gtco-products -->
+
+		<div class="gtco-section gtco-testimonial gtco-gray">
+			<div class="gtco-container">
+
+				<div class="row row-pb-sm">
+					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+						<h2>People Love Us</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 col-sm-6 animate-box fadeInUp animated-fast">
+						<div class="gtco-testimony gtco-left">
+							<div><img src="images/person_1.jpg" alt="Free Website template by FreeHTML5.co"></div>
+							<blockquote>
+								<p>“Design must be functional and functionality must be translated into visual aesthetics, without any reliance on gimmicks that have to be explained.” <cite class="author">— Ferdinand A. Porsche</cite></p>
+							</blockquote>	
+						</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6 animate-box fadeInUp animated-fast">
+						<div class="gtco-testimony gtco-left">
+							<div><img src="images/person_2.jpg" alt="Free Website template by FreeHTML5.co"></div>
+							<blockquote>
+								<p>“Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while.” <cite class="author">— Steve Jobs</cite></p>
+							</blockquote>	
+						</div>
+					</div>
+
+					
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-6 animate-box fadeInUp animated-fast">
+						<div class="gtco-testimony gtco-left">
+							<div><img src="images/person_3.jpg" alt="Free Website template by FreeHTML5.co"></div>
+							<blockquote>
+								<p>“I think design would be better if designers were much more skeptical about its applications. If you believe in the potency of your craft, where you choose to dole it out is not something to take lightly.” <cite class="author">— Frank Chimero</cite></p>
+							</blockquote>	
+						</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6 animate-box fadeInUp animated-fast">
+						<div class="gtco-testimony gtco-left">
+							<div><img src="images/person_1.jpg" alt="Free Website template by FreeHTML5.co"></div>
+							<blockquote>
+								<p>“Design must be functional and functionality must be translated into visual aesthetics, without any reliance on gimmicks that have to be explained.” <cite class="author">— Ferdinand A. Porsche</cite></p>
+							</blockquote>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<footer id="gtco-footer" class="gtco-section" role="contentinfo">
+			<div class="gtco-container">
+				<div class="row row-pb-md">
+					<div class="col-md-8 col-md-offset-2 gtco-cta text-center">
+						<h3>We Love To Talk About Your Business</h3>
+						<p><a href="#" class="btn btn-white btn-outline">Contact Us</a></p>
+					</div>
+				</div>
+				<div class="row row-pb-md">
+					<div class="col-md-4 gtco-widget gtco-footer-paragraph">
+						<h3>Cube</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod.</p>
+					</div>
+					<div class="col-md-4 gtco-footer-link">
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="gtco-list-link">
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Features</a></li>
+									<li><a href="#">Products</a></li>
+									<li><a href="#">Testimonial</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<p>
+									<a href="tel://1234567890">+1 234 4565 2342</a> <br>
+									<a href="#">info@domain.com</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 gtco-footer-subscribe">
+						<form class="form-inline">
+						  <div class="form-group">
+						    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+						    <input type="email" class="form-control" id="" placeholder="Email">
+						  </div>
+						  <button type="submit" class="btn btn-primary">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="gtco-copyright">
+				<div class="gtco-container">
+					<div class="row">
+						<div class="col-md-6 text-left">
+							<p><small>© 2016 Free HTML5. All Rights Reserved. </small></p>
+						</div>
+						<div class="col-md-6 text-right">
+							<p><small>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com" target="_blank">Unsplash</a></small> </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	
+
+
+
+
+</body></html>
